@@ -5,7 +5,11 @@
 }
 
 body {
-  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 50%, #faf5ff 100%);
+  background-image: url('./assets/flores.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: #3b0764;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   min-height: 100vh;
@@ -24,12 +28,10 @@ button {
 .containerTodoApp {
   width: 100%;
   max-width: 500px;
-  background-color: #ffffff;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.92); 
+  backdrop-filter: blur(8px); 
   padding: 32px 28px;
   border-radius: 24px;
-  box-shadow: 0 15px 30px -10px rgba(147, 51, 234, 0.15), 0 8px 12px -6px rgba(126, 34, 206, 0.08);
+  box-shadow: 0 15px 35px -10px rgba(147, 51, 234, 0.25), 0 8px 12px -6px rgba(126, 34, 206, 0.1);
   border: 2px solid #f3e8ff;
 }

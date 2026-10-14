@@ -56,8 +56,8 @@ function TodoApp() {
                     <li className={styles.noteItem} key={nota.id}>
                         <span className={styles.noteText}>
                             {nota.text} 
-                            <span className ={styles.statusBadge}>
-                            {nota.completed ? "😊" : "😢"}
+                            <span className={styles.statusBadge}>
+                                {nota.completed ? "😊" : "😢"}
                             </span>
                         </span>
                         
