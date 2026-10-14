@@ -27,9 +27,9 @@ La propiedad `key` le da un identificador único a cada elemento generado dinám
 ---
 
 ### Enlace del Repositorio de GitHub
-[https://github.com/AleidaPablo/t3_act4_react.git](https://github.com/TU_USUARIO/t3_act4_react)
+[https://github.com/AleidaPablo/t3_act4_react.git](https://github.com/AleidaPablo/t3_act4_react)
 
 ---
 
 ### Enlace del Proyecto Desplegado en GitHub Pages
-[https://aleidapablo.github.io/t3_act4_react/](https://TU_USUARIO.github.io/t3_act4_react/)
+[https://aleidapablo.github.io/t3_act4_react/](https://aleidapablo.github.io/t3_act4_react/)
