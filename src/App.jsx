@@ -1,6 +1,5 @@
 import "./index.css";
 import TodoApp from "./components/TodoApp";
-import fondoFlores from "./assets/flores.jpg";
 // `<h1>${nombre}</h1>`
 // <></> Fragmentos
 
@@ -8,8 +7,7 @@ import fondoFlores from "./assets/flores.jpg";
 
 function App() {
     return (
-        <section className="containerTodoApp"
-        style={{ backgroundImage: `url(${fondoFlores})` }}>
+        <section className="containerTodoApp">
             <TodoApp />
         </section>
     );
