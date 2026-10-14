@@ -1,16 +1,35 @@
-# React + Vite
+# Mini Aplicación de Notas 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación interactiva para la gestión de notas construida con **React** y **Vite** como parte de la Actividad 4.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Descripción del Proyecto
+La aplicación permite crear, completar, editar y eliminar notas en tiempo real. Está construida utilizando únicamente el estado local de React (`useState`), iteración de componentes (`.map()`) y paso de propiedades (`props`) entre componentes funcionales.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Cuestionario 
 
-## Expanding the ESLint configuration
+### ¿Qué diferencia hay entre props y state en React?
+Que los props son parámetros de entrada que un componente padre transmite a sus componentes hijos,son de solo lectura dentro del componente que las recibe.Mientras que los State es la memoria interna de un componente que puede cambiar. Cuando cambia, React actualiza la pantalla automáticamente.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+### ¿Por qué es importante usar una key al renderizar una lista de elementos?
+La propiedad `key` le da un identificador único a cada elemento generado dinámicamente en una lista con `.map()`. Esto permite que el Virtual DOM de React identifique con precisión qué elementos han cambiado, se han agregado o se han eliminado, optimizando el rendimiento y evitando errores al actualizar la interfaz.
+
+---
+
+### Explica con tus propias palabras qué hace la función useState y da un ejemplo de dónde la usaste en tu mini aplicación.
+`useState` es el Hook que usas para que un componente recuerde datos que van a cambiar. Te da dos cosas: la variable con el dato actual y la función para cambiarlo.
+- **Ejemplo en la app:** Lo usé en TodoApp.jsx para guardar la lista de notas ([notas, setNotas]) y en TodoForm.jsx para guardar lo que el usuario escribe en el input ([textNote, setTextNote]).
+---
+
+### Enlace del Repositorio de GitHub
+[https://github.com/AleidaPablo/t3_act4_react.git](https://github.com/TU_USUARIO/t3_act4_react)
+
+---
+
+### Enlace del Proyecto Desplegado en GitHub Pages
+[https://aleidapablo.github.io/t3_act4_react/](https://TU_USUARIO.github.io/t3_act4_react/)
