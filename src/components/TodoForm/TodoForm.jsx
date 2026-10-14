@@ -23,7 +23,7 @@ const TodoForm = ({ onAgregarNota }) => {
 
     return (
         <div className={styles.formContainer}>
-            <h2>Todo Form</h2>
+            <h2>Tareas Pendientes</h2>
             <form onSubmit={handleSubmit}>
                 <input 
                     type="text" 

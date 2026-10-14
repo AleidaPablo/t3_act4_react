@@ -7,7 +7,7 @@ import { SquarePen, Trash } from "lucide-react";
 function TodoApp() {
     const [notas, setNotas] = useState([
         { id: 1, text: "Aprender React desde cero", completed: false },
-        { id: 2, text: "Comprender componentes y estado", completed: true }
+        { id: 2, text: "Comprender componentes", completed: true }
     ]);
     
     const [notaEditandoId, setNotaEditandoId] = useState(null);
@@ -55,12 +55,12 @@ function TodoApp() {
                 {notas.map((nota) => (
                     <li className={styles.noteItem} key={nota.id}>
                         <span>
-                            {nota.text} {nota.completed ? "✅" : "❎"}
+                            {nota.text} {nota.completed ? "😊" : "😢"}
                         </span>
                         
                         <div className={styles.iconsContainer}>
                             <button onClick={() => marcarComoCompleta(nota.id)}>
-                                {nota.completed ? "Desmarcar" : "Completar"}
+                                {nota.completed ? " Incompleto" : "Completar"}
                             </button>
                             
                             <SquarePen
