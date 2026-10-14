@@ -1,0 +1,94 @@
+import styles from "./todoApp.module.css";
+import { useState } from "react";
+import TodoForm from "./TodoForm/TodoForm";
+import EditNoteForm from "./EditNoteForm/EditNoteForm";
+import { SquarePen, Trash } from "lucide-react";
+
+function TodoApp() {
+    const [notas, setNotas] = useState([
+        { id: 1, text: "Aprender React desde cero", completed: false },
+        { id: 2, text: "Comprender componentes y estado", completed: true }
+    ]);
+    
+    const [notaEditandoId, setNotaEditandoId] = useState(null);
+
+    //Agregar nota
+    const agregarNota = (nuevaNota) => {
+        setNotas([...notas, nuevaNota]);
+    };
+
+    //Eliminar nota (sin fetch)
+    const eliminarNota = (id) => {
+        setNotas(notas.filter((nota) => nota.id !== id));
+    };
+
+    //Actualizar el texto de una nota 
+    const actualizarNota = (notaActualizada) => {
+        setNotas(
+            notas.map((nota) =>
+                nota.id === notaActualizada.id ? notaActualizada : nota
+            )
+        );
+        setNotaEditandoId(null); 
+    };
+
+    // Cambiar estado de completado (sin fetch)
+    const marcarComoCompleta = (notaId) => {
+        setNotas(
+            notas.map((nota) =>
+                nota.id === notaId
+                    ? { ...nota, completed: !nota.completed }
+                    : nota
+            )
+        );
+    };
+
+    return (
+        <>
+            <h1 className={styles.titulo}>Notas</h1>
+            
+            {}
+            <TodoForm onAgregarNota={agregarNota} />
+
+            {}
+            <ul className={styles.noteList}>
+                {notas.map((nota) => (
+                    <li className={styles.noteItem} key={nota.id}>
+                        <span>
+                            {nota.text} {nota.completed ? "✅" : "❎"}
+                        </span>
+                        
+                        <div className={styles.iconsContainer}>
+                            <button onClick={() => marcarComoCompleta(nota.id)}>
+                                {nota.completed ? "Desmarcar" : "Completar"}
+                            </button>
+                            
+                            <SquarePen
+                                onClick={() => setNotaEditandoId(nota.id)}
+                                size={26}
+                                style={{ cursor: "pointer" }}
+                            />
+                            
+                            <Trash
+                                onClick={() => eliminarNota(nota.id)}
+                                size={26}
+                                style={{ cursor: "pointer" }}
+                            />
+                        </div>
+
+                        {}
+                        {notaEditandoId === nota.id && (
+                            <EditNoteForm
+                                nota={nota}
+                                onEditarNota={actualizarNota}
+                                onCancelar={() => setNotaEditandoId(null)}
+                            />
+                        )}
+                    </li>
+                ))}
+            </ul>
+        </>
+    );
+}
+
+export default TodoApp;
