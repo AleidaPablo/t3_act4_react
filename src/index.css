@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url('./assets/flores.jpg'); 
+  background-image: url('./flores.png'); 
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

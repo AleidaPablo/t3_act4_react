@@ -12,12 +12,15 @@ function TodoApp() {
     
     const [notaEditandoId, setNotaEditandoId] = useState(null);
 
+    // Contador de tareas pendientes
+    const pendientesCount = notas.filter((nota) => !nota.completed).length;
+
     //Agregar nota
     const agregarNota = (nuevaNota) => {
         setNotas([...notas, nuevaNota]);
     };
 
-    //Eliminar nota (sin fetch)
+    //Eliminar nota 
     const eliminarNota = (id) => {
         setNotas(notas.filter((nota) => nota.id !== id));
     };
@@ -32,7 +35,7 @@ function TodoApp() {
         setNotaEditandoId(null); 
     };
 
-    // Cambiar estado de completado (sin fetch)
+    // Cambiar estado de completado 
     const marcarComoCompleta = (notaId) => {
         setNotas(
             notas.map((nota) =>
@@ -47,10 +50,14 @@ function TodoApp() {
         <>
             <h1 className={styles.titulo}>Notas</h1>
             
-            {}
+            <div className={styles.counterBanner}>
+                {pendientesCount === 0 
+                    ? "No tienes tareas pendientes" 
+                    : `Tienes ${pendientesCount} ${pendientesCount === 1 ? 'tarea pendiente' : 'tareas pendientes'}`}
+            </div>
+
             <TodoForm onAgregarNota={agregarNota} />
 
-            {}
             <ul className={styles.noteList}>
                 {notas.map((nota) => (
                     <li className={styles.noteItem} key={nota.id}>
@@ -63,7 +70,7 @@ function TodoApp() {
                         
                         <div className={styles.iconsContainer}>
                             <button onClick={() => marcarComoCompleta(nota.id)}>
-                                {nota.completed ? " Incompleto" : "Completar"}
+                                {nota.completed ? " Incompleto" : "Completado"}
                             </button>
                             
                             <SquarePen
@@ -79,7 +86,6 @@ function TodoApp() {
                             />
                         </div>
 
-                        {}
                         {notaEditandoId === nota.id && (
                             <EditNoteForm
                                 nota={nota}

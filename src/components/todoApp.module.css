@@ -148,3 +148,14 @@
     font-size: 1.1rem;
     line-height: 1;
     }
+    .counterBanner {
+    background-color: #f3e8ff;
+    color: #7e22ce;
+    border: 1px dashed #c084fc;
+    border-radius: 12px;
+    padding: 10px 14px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
