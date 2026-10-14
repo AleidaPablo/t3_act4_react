@@ -5,6 +5,7 @@
 }
 
 body {
+  background-color: #d9b6ff;
   background-image: url('./flores.png'); 
   background-size: cover;
   background-position: center;
